@@ -1,0 +1,21 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="w-full max-w-sm mx-auto my-12">
+    <p-fluid class="flex flex-col gap-8">
+        <h1 class="text-center text-3xl">Login</h1>
+
+        <p-floatlabel variant="on">
+            <input pInputText id="email" formControlName="email" autocomplete="email" />
+            <label for="email">Email</label>
+        </p-floatlabel>
+
+        <p-floatlabel variant="on">
+            <p-password [toggleMask]="true" formControlName="password" inputId="password" [feedback]="false" autocomplete="current-password" />
+            <label for="password">Password</label>
+        </p-floatlabel>
+
+        <p-fluid class="flex flex-col gap-4">
+            <p-button type="submit" label="Log In" [rounded]="true" [disabled]="!loginForm.valid" [loading]="loading" />
+
+            <p-button label="Sign Up" [link]="true" routerLink="/signup" />
+        </p-fluid>
+    </p-fluid>
+</form>

@@ -1,0 +1,36 @@
+<form [formGroup]="signupForm" (ngSubmit)="signup()" class="w-full max-w-sm mx-auto my-12">
+    <p-fluid class="flex flex-col gap-8">
+        <h1 class="text-center text-3xl">Signup</h1>
+
+        <p-floatlabel variant="on">
+            <input pInputText id="first-name" formControlName="firstName" autocomplete="given-name" />
+            <label for="firstName">First Name</label>
+        </p-floatlabel>
+
+        <p-floatlabel variant="on">
+            <input pInputText id="last-name" formControlName="lastName" autocomplete="family-name" />
+            <label for="lastName">Last Name</label>
+        </p-floatlabel>
+
+        <p-floatlabel variant="on">
+            <input pInputText id="email" formControlName="email" autocomplete="email" />
+            <label for="email">Email</label>
+        </p-floatlabel>
+
+        <p-floatlabel variant="on">
+            <p-password [toggleMask]="true" formControlName="password" inputId="password" autocomplete="new-password" />
+            <label for="password">Password</label>
+        </p-floatlabel>
+
+        <p-floatlabel variant="on">
+            <p-password [toggleMask]="true" formControlName="confirmPassword" inputId="confirm-password" [feedback]="false" autocomplete="current-password" />
+            <label for="confirm-password">Confirm Password</label>
+        </p-floatlabel>
+
+        <p-fluid class="flex flex-col gap-4">
+            <p-button type="submit" label="Sign Up" [rounded]="true" [loading]="loading" [disabled]="signupForm.invalid" />
+
+            <p-button label="Log In" [link]="true" routerLink="/login" />
+        </p-fluid>
+    </p-fluid>
+</form>

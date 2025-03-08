@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ButtonDemo } from './button-demo/button-demo.component';
+import { MessageService } from 'primeng/api';
+import { ErrorHandlerService } from './shared/services/error-handler.service';
+import { Toast } from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ButtonDemo],
+  imports: [RouterOutlet, Toast],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  providers: [MessageService, ErrorHandlerService],
 })
-export class AppComponent {
-  title = 'ui';
-}
+export class AppComponent {}
